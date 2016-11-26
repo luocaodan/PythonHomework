@@ -5,7 +5,9 @@ class Student:
         self.name = name
         self.score = score
         self.math = math
-
+    
+    #这个可以直接实现类的比较
+    #例如：classname1 < classname2
     def __lt__(self, other):
         if self.score < other.score:
             return 1
@@ -13,7 +15,9 @@ class Student:
             return 1
         else:
             return 0
-
+    
+    #实现类的打印，print时会调用这个方法
+    #例如：print(类名)
     def __repr__(self):
         return self.name
 
@@ -28,6 +32,7 @@ def sort(l):
     return l
 
 
+#插入排序
 def insert_sort(lst):
     n=len(lst)
     if n==1: return lst
